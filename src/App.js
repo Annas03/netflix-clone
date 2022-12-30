@@ -1,24 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect, useState} from "react";
+import NavBar from "./components/NavBar"
+import FeaturedMovie from "./components/FeaturedMovie"
+import MovieList from "./components/MovieList"
+import requests from "./request";
 
-function App() {
+
+const App = () => {
+  const [movieTitle, setMovieTitle] = useState("")
+  const [movieOverview, setMovieOverview] = useState("")
+  const [moviebackdrop, setMoviebackdrop] = useState("")
+  const featuredMovie = () => {
+    fetch("https://api.themoviedb.org/3" + requests.fetchTrending)
+    .then(response => response.json())
+    .then(data => {
+      const {title,overview, backdrop_path} = data.results[0];
+      setMovieTitle(title)
+      setMovieOverview(overview)
+      setMoviebackdrop(backdrop_path)
+    })
+  }
+  useEffect(featuredMovie,[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="body" className="h-max bg-background">
+      <div id="header" className="relative bg-black shadow-Shadow">
+        <NavBar/>
+        <FeaturedMovie movieTitle={movieTitle} movieOverview={movieOverview}/>
+        <img src={`https://image.tmdb.org/t/p/original${moviebackdrop}`}/>
+      </div>
+      <div id="netflix-originals">
+        <h1 className='text-white text-md ml-4 mt-1'>Netflix Originals</h1>
+        <MovieList fetchMovieList={requests.fetchNetflixOriginals}/>
+      </div>
+      <div id="Trending-Now">
+        <h1 className='text-white text-md ml-4 mt-1'>Trending Now</h1>
+        <MovieList fetchMovieList={requests.fetchTrending}/>
+      </div>
+      <div id="Top-Rated">
+        <h1 className='text-white text-md ml-4 mt-1'>Top Rated</h1>
+        <MovieList fetchMovieList={requests.fetchTopRated}/>
+      </div>
+      <div id="Action-Movies">
+        <h1 className='text-white text-md ml-4 mt-1'>Action Movies</h1>
+        <MovieList fetchMovieList={requests.fetchActionMovies}/>
+      </div>
+      <div id="Comedy-Movies">
+        <h1 className='text-white text-md ml-4 mt-1'>Comedy Movies</h1>
+        <MovieList fetchMovieList={requests.fetchComedyMovies}/>
+      </div>
+      <div id="Horror-Movies">
+        <h1 className='text-white text-md ml-4 mt-1'>Horror Movies</h1>
+        <MovieList fetchMovieList={requests.fetchHorrorMovies}/>
+      </div>
+      <div id="Documentaries-Movies">
+        <h1 className='text-white text-md ml-4 mt-1'>Documentaries Movies</h1>
+        <MovieList fetchMovieList={requests.fetchDocumentariesMovies}/>
+      </div>
+      <div id="Scifi-Movies">
+        <h1 className='text-white text-md ml-4 mt-1'>Scifi Movies</h1>
+        <MovieList fetchMovieList={requests.fetchScifiMovies}/>
+      </div>
     </div>
+  
   );
 }
 
