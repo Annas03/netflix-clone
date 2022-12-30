@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const FeaturedMovie = ({movieTitle, movieOverview}) => {
   return (
-    <div className=' lg:mt-56 mt-14 ml-4 lg:ml-16 w-2/5 absolute z-10'>
+    <div className=' lg:mt-56 mt-14 ml-4 lg:ml-16 w-2/5 absolute'>
       <h1 className='lg:text-8xl text-sm font-medium text-white drop-shadow-2xl'>{movieTitle}</h1>
       <p className='lg:mt-6 lg:my-4 my-1 lg:text-xl text-white lg:w-11/12 lg:font-medium text-ssm'>{movieOverview}</p>
       <div className='lg:mt-8 text-white'>
