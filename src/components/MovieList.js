@@ -13,7 +13,7 @@ const MovieList = ({fetchMovieList, poster}) => {
   useEffect(fetchMovies, [])
 
   return (
-    <div className='text-white overflow-x-scroll me:pb-8 ml-2 mt-2 flex'>
+    <div className='text-white overflow-x-scroll md:scrollbar-hide me:pb-8 ml-2 mt-2 flex'>
       {Movies.map((item, i) => <Movie key={i} movie={item} p={poster}/>)}
     </div>
   )
