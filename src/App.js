@@ -19,6 +19,12 @@ const App = () => {
       setMoviebackdrop(backdrop_path)
     })
   }
+  const leftClick = () => {
+
+  }
+  const rightClick = () => {
+    
+  }
   useEffect(featuredMovie,[])
 
   return (
@@ -28,8 +34,12 @@ const App = () => {
         <FeaturedMovie movieTitle={movieTitle} movieOverview={movieOverview}/>
         <img className="md:mb-8 max-h-fit" src={`https://image.tmdb.org/t/p/original${moviebackdrop}`}/>
       </div>
-      <div id="netflix-originals">
+      <div id="netflix-originals" className="relative">
         <h1 className='text-white xl:text-2xl md:text-lg text-md ml-4 mt-1'>Netflix Originals</h1>
+        <div id="button-div" className="text-white w-full flex justify-between px-6 mx-auto pt-48 absolute">
+          <button onClick={leftClick}>left</button>
+          <button onClick={rightClick}>right</button>
+        </div>
         <MovieList fetchMovieList={requests.fetchNetflixOriginals} poster={`poster`}/>
       </div>
       <div id="Trending-Now">
