@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Movie from "./Movie"
 
-const MovieList = ({fetchMovieList}) => {
+const MovieList = ({fetchMovieList, poster}) => {
 
   const[Movies, setMovies] = useState([])
 
@@ -13,8 +13,8 @@ const MovieList = ({fetchMovieList}) => {
   useEffect(fetchMovies, [])
 
   return (
-    <div className='text-white overflow-x-scroll ml-2 mt-2 flex'>
-      {Movies.map((item, i) => <Movie key={i} movie={item}/>)}
+    <div className='text-white overflow-x-scroll me:pb-8 ml-2 mt-2 flex'>
+      {Movies.map((item, i) => <Movie key={i} movie={item} p={poster}/>)}
     </div>
   )
 }

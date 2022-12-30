@@ -21,6 +21,12 @@ module.exports = {
       },
       fontSize:{
         ssm:"0.4rem",
+      },
+      screens:{
+        'sm':'320px',
+        'sn':'420px',
+        'ss':'600px',
+        'me':'880px',
       }
     },
   },
