@@ -9,6 +9,7 @@ const App = () => {
   const [movieTitle, setMovieTitle] = useState("")
   const [movieOverview, setMovieOverview] = useState("")
   const [moviebackdrop, setMoviebackdrop] = useState("")
+
   const featuredMovie = () => {
     fetch("https://api.themoviedb.org/3" + requests.fetchTrending)
     .then(response => response.json())
@@ -19,11 +20,11 @@ const App = () => {
       setMoviebackdrop(backdrop_path)
     })
   }
-  const leftClick = () => {
-
+  const leftClick = (id) => {
+    document.getElementById(`${id}`).scrollLeft -= 400
   }
-  const rightClick = () => {
-    
+  const rightClick = (id) => {
+    document.getElementById(`${id}`).scrollLeft += 400
   }
   useEffect(featuredMovie,[])
 
@@ -37,38 +38,66 @@ const App = () => {
       <div id="netflix-originals" className="relative">
         <h1 className='text-white xl:text-2xl md:text-lg text-md ml-4 mt-1'>Netflix Originals</h1>
         <div id="button-div" className="text-white w-full flex justify-between px-6 mx-auto pt-48 absolute">
-          <button onClick={leftClick}>left</button>
-          <button onClick={rightClick}>right</button>
+          <button onClick={()=>{leftClick('one')}}>left</button>
+          <button id="right-btn" onClick={()=>{rightClick('one')}}>right</button>
         </div>
-        <MovieList fetchMovieList={requests.fetchNetflixOriginals} poster={`poster`}/>
+        <MovieList fetchMovieList={requests.fetchNetflixOriginals} id={'one'} poster={`poster`}/>
       </div>
       <div id="Trending-Now">
         <h1 className='text-white xl:text-2xl md:text-lg text-md ml-4 mt-1'>Trending Now</h1>
-        <MovieList fetchMovieList={requests.fetchTrending} poster={`backdrop`}/>
+        <div id="button-div" className="text-white w-full flex justify-between px-6 mx-auto pt-16 absolute">
+          <button onClick={()=>{leftClick('two')}}>left</button>
+          <button id="right-btn" onClick={()=>{rightClick('two')}}>right</button>
+        </div>
+        <MovieList fetchMovieList={requests.fetchTrending} id={'two'} poster={`backdrop`}/>
       </div>
       <div id="Top-Rated">
         <h1 className='text-white xl:text-2xl md:text-lg text-md ml-4 mt-1'>Top Rated</h1>
-        <MovieList fetchMovieList={requests.fetchTopRated} poster={`backdrop`}/>
+        <div id="button-div" className="text-white w-full flex justify-between px-6 mx-auto pt-16 absolute">
+          <button onClick={()=>{leftClick('three')}}>left</button>
+          <button id="right-btn" onClick={()=>{rightClick('three')}}>right</button>
+        </div>
+        <MovieList fetchMovieList={requests.fetchTopRated} id={'three'} poster={`backdrop`}/>
       </div>
       <div id="Action-Movies">
         <h1 className='text-white xl:text-2xl md:text-lg text-md ml-4 mt-1'>Action Movies</h1>
-        <MovieList fetchMovieList={requests.fetchActionMovies} poster={`backdrop`}/>
+        <div id="button-div" className="text-white w-full flex justify-between px-6 mx-auto pt-16 absolute">
+          <button onClick={()=>{leftClick('four')}}>left</button>
+          <button id="right-btn" onClick={()=>{rightClick('four')}}>right</button>
+        </div>
+        <MovieList fetchMovieList={requests.fetchActionMovies} id={'four'} poster={`backdrop`}/>
       </div>
       <div id="Comedy-Movies">
         <h1 className='text-white xl:text-2xl md:text-lg text-md ml-4 mt-1'>Comedy Movies</h1>
-        <MovieList fetchMovieList={requests.fetchComedyMovies} poster={`backdrop`}/>
+        <div id="button-div" className="text-white w-full flex justify-between px-6 mx-auto pt-16 absolute">
+          <button onClick={()=>{leftClick('five')}}>left</button>
+          <button id="right-btn" onClick={()=>{rightClick('five')}}>right</button>
+        </div>
+        <MovieList fetchMovieList={requests.fetchComedyMovies} id={'five'} poster={`backdrop`}/>
       </div>
       <div id="Horror-Movies">
         <h1 className='text-white xl:text-2xl md:text-lg text-md ml-4 mt-1'>Horror Movies</h1>
-        <MovieList fetchMovieList={requests.fetchHorrorMovies} poster={`backdrop`}/>
+        <div id="button-div" className="text-white w-full flex justify-between px-6 mx-auto pt-16 absolute">
+          <button onClick={()=>{leftClick('six')}}>left</button>
+          <button id="right-btn" onClick={()=>{rightClick('six')}}>right</button>
+        </div>
+        <MovieList fetchMovieList={requests.fetchHorrorMovies} id={'six'} poster={`backdrop`}/>
       </div>
       <div id="Documentaries-Movies">
         <h1 className='text-white xl:text-2xl md:text-lg text-md ml-4 mt-1'>Documentaries Movies</h1>
-        <MovieList fetchMovieList={requests.fetchDocumentariesMovies} poster={`backdrop`}/>
+        <div id="button-div" className="text-white w-full flex justify-between px-6 mx-auto pt-16 absolute">
+          <button onClick={()=>{leftClick('seven')}}>left</button>
+          <button id="right-btn" onClick={()=>{rightClick('seven')}}>right</button>
+        </div>
+        <MovieList fetchMovieList={requests.fetchDocumentariesMovies} id={'seven'} poster={`backdrop`}/>
       </div>
       <div id="Scifi-Movies">
         <h1 className='text-white xl:text-2xl md:text-lg text-md ml-4 mt-1'>Scifi Movies</h1>
-        <MovieList fetchMovieList={requests.fetchScifiMovies} poster={`backdrop`}/>
+        <div id="button-div" className="text-white w-full flex justify-between px-6 mx-auto pt-16 absolute">
+          <button onClick={()=>{leftClick('eight')}}>left</button>
+          <button id="right-btn" onClick={()=>{rightClick('eight')}}>right</button>
+        </div>
+        <MovieList fetchMovieList={requests.fetchScifiMovies} id={'eight'} poster={`backdrop`}/>
       </div>
     </div>
   
