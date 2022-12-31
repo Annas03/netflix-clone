@@ -10,6 +10,9 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      maxHeight: {
+        '128': '85vh',
+      },
       backgroundImage: {
         'background-hero': "url('./assets/background-hero.svg')",
       },

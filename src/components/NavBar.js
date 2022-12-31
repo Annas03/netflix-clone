@@ -21,7 +21,7 @@ const NavBar = () => {
     <div className={`flex w-full z-10 mx-auto ss:pt-2 2xl:pt-8 lg:pt-6 lg:pb-4 py-2 lg:pl-16 me:pl-8 pl-4 fixed ${(Offset !== 0)&&'bg-background'}`}>
       <img src={logo} className="xl:w-28 lg:w-24 w-16 md:w-24 ss:w-20 2xl:w-32"/>
       <button onClick={onBrowseClicked} className='me:hidden text-white lg:ml-16 ss:ml-6 ml-4 text-xs ss:text-sm md:text-base md:ml-8'>Browse</button>
-      {browseClicked && <ul className='absolute rounded ml-20 mt-4 flex flex-wrap w-10 backdrop-blur-3xl text-ssm text-white'>
+      {browseClicked && <ul className='absolute rounded ml-20 mt-4 flex flex-wrap w-10 backdrop-blur-3xl text-ssm text-white ss:text-xs ss:ml-28 ss:mt-6 md:ml-36'>
       <li>Home</li>
       <li>TV Shows</li>
       <li>Movies</li>
