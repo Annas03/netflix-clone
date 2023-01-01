@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <div id="body" className="h-max bg-background">
-      <div id="header" className="relative max-h-128 bg-black shadow-Shadow overflow-hidden">
+      <div id="header" className="relative max-h-128 bg-background shadow-Shadow overflow-hidden">
         <NavBar/>
         <FeaturedMovie movieTitle={movieTitle} movieOverview={movieOverview}/>
         <img className="md:mb-8 max-h-fit" src={`https://image.tmdb.org/t/p/original${moviebackdrop}`}/>
