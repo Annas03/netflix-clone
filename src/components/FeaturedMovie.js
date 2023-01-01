@@ -6,8 +6,8 @@ const FeaturedMovie = ({movieTitle, movieOverview}) => {
       <h1 className='xl:text-7xl lg:text-5xl me:text-3xl ss:text-lg sn:text-base md:text-xl text-sm font-medium text-white drop-shadow-2xl'>{movieTitle}</h1>
       <p className='lg:mt-6 lg:my-4 my-1 lg:text-lg text-white lg:w-11/12 xl:text-xl sn:text-xs text-ssm md:text-sm me:text-base'>{movieOverview}</p>
       <div className='lg:mt-6 text-white md:mt-4'>
-          <button className="border rounded backdrop-blur-lg lg:w-16 w-8 py-0.5 2xl:text-xl 2xl:w-28 2xl:py-2 lg:text-base xl:text-lg sn:text-xs text-ssm md:text-sm md:w-20">Play</button>
-          <button className='border py-0.5 rounded ml-2 backdrop-blur-xl 2xl:text-xl 2xl:w-28 2xl:py-2 lg:w-24 w-10 xl:text-lg lg:text-base sn:text-xs sn:w-16 text-ssm md:text-sm md:ml-6 md:w-20'>More Info</button>
+          <button className="border rounded backdrop-blur-lg lg:w-16 w-8 py-0.5 2xl:text-xl 2xl:w-28 2xl:py-2 lg:text-base xl:text-lg sn:text-xs text-ssm md:text-sm md:w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Play</button>
+          <button className='border py-0.5 rounded ml-2 backdrop-blur-xl 2xl:text-xl 2xl:w-28 2xl:py-2 lg:w-24 w-10 xl:text-lg lg:text-base sn:text-xs sn:w-16 text-ssm md:text-sm md:ml-6 md:w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>More Info</button>
       </div>
     </div>
   )
